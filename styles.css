@@ -27,6 +27,7 @@ button { color: inherit; }
 .brand-copy { display: grid; gap: 1px; }
 .brand-copy strong { font-size: 15px; line-height: 1; letter-spacing: 0.08em; }
 .brand-copy small { color: var(--muted); font-size: 11px; }
+.brand-copy .brand-school { color: #969b90; font-size: 8px; }
 .main-nav { display: flex; gap: 34px; height: 100%; align-items: center; margin-left: auto; margin-right: 40px; }
 .nav-link { position: relative; display: flex; align-items: center; height: 100%; color: #777e71; font-size: 13px; }
 .nav-link.active, .nav-link:hover { color: var(--ink); }
@@ -109,6 +110,13 @@ button { color: inherit; }
 .footer-brand { color: var(--forest); font-size: 12px; letter-spacing: .08em; font-weight: 700; }
 .footer-brand span { color: var(--coral); font-size: 8px; vertical-align: top; }
 .site-footer a:last-child { color: var(--forest); font-weight: 600; }
+.about-section { padding: 58px 7.1%; background: var(--forest); color: var(--white); }
+.about-inner { max-width: 1110px; margin: 0 auto; display: grid; grid-template-columns: minmax(220px, .58fr) 1fr; align-items: center; gap: 68px; }
+.about-heading .eyebrow { margin-bottom: 15px; color: #c2d0bd; }
+.about-heading h2 { margin: 0; font: 500 36px/1.12 var(--serif); }
+.about-heading h2 em { color: var(--lime); font-weight: 500; }
+.about-school { margin: 20px 0 0; color: #f0a18b; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.about-copy { margin: 0; color: #d7e0d6; font-size: 13px; line-height: 1.9; }
 
 .modal { width: min(620px, calc(100% - 30px)); max-height: min(90vh, 860px); padding: 0; border: 0; border-radius: 4px; background: var(--white); color: var(--ink); box-shadow: 0 20px 70px rgba(11, 37, 29, .28); }
 .modal::backdrop { background: rgba(12, 34, 28, .62); backdrop-filter: blur(2px); }
@@ -170,6 +178,7 @@ button { color: inherit; }
   .brand-mark { width: 34px; height: 34px; font-size: 20px; }
   .brand-copy strong { font-size: 13px; }
   .brand-copy small { font-size: 9px; }
+  .brand-copy .brand-school { font-size: 7px; }
   .main-nav { display: none; }
   .header-actions { margin-left: auto; gap: 6px; }
   .button { min-height: 37px; padding-inline: 10px; gap: 6px; font-size: 10px; }
@@ -197,6 +206,10 @@ button { color: inherit; }
   .work-item h3 { font-size: 21px; }
   .work-excerpt { font-size: 10px; }
   .reading-aside { margin: 0; }
+  .about-section { padding: 41px 22px 44px; }
+  .about-inner { grid-template-columns: 1fr; gap: 21px; }
+  .about-heading h2 { font-size: 32px; }
+  .about-copy { font-size: 12px; line-height: 1.8; }
   .site-footer { padding: 18px 22px; flex-wrap: wrap; }
   .site-footer span { order: 3; width: 100%; }
   .modal-panel { padding: 25px 22px 23px; }
