@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173e32" />
+    <meta name="description" content="JENAKA, Jendela Aksara. Ruang baca dan berkarya untuk warga sekolah." />
+    <title>JENAKA — Jendela Aksara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#beranda" aria-label="JENAKA, kembali ke beranda">
+        <span class="brand-mark" aria-hidden="true">J</span>
+        <span class="brand-copy"><strong>JENAKA</strong><small>Jendela Aksara</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a class="nav-link active" href="#karya" data-view="public">Ruang baca</a>
+        <a class="nav-link" href="#tentang" data-view="about">Tentang</a>
+      </nav>
+      <div class="header-actions">
+        <button class="button button-quiet" id="teacher-entry" type="button">Ruang guru <span aria-hidden="true">↗</span></button>
+        <button class="button button-accent" id="open-submit" type="button">Kirim karya <span aria-hidden="true">＋</span></button>
+      </div>
+    </header>
+
+    <main id="beranda">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> LITERASI SEKOLAH · JENAKA</p>
+          <h1 id="hero-title">Setiap cerita<br />punya <em>tempat</em>.</h1>
+          <p class="hero-intro">Jendela Aksara adalah ruang untuk membaca, berbagi, dan merayakan ide dari seluruh penjuru sekolah.</p>
+          <a class="hero-link" href="#karya">Jelajahi karya <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-label="Ruang untuk membaca dan menulis">
+          <div class="hero-stamp"><span>EDISI</span><strong>01</strong><span>RUANG KITA</span></div>
+          <div class="hero-quote">“Menulis adalah<br />cara kita <i>menyapa</i><br />dunia.”</div>
+          <div class="hero-scribble" aria-hidden="true">✳</div>
+          <div class="hero-caption">DARI KELAS, UNTUK SEMUA</div>
+        </div>
+      </section>
+
+      <section class="stats-strip" aria-label="Ringkasan JENAKA">
+        <div class="stat-item"><span class="stat-number" id="published-count">0</span><span class="stat-label">karya terbit</span></div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item"><span class="stat-number" id="student-count">0</span><span class="stat-label">penulis muda</span></div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-note"><span class="stat-spark" aria-hidden="true">✳</span><span>Semua karya ditinjau guru<br />sebelum dibaca bersama.</span></div>
+        <button class="text-button stats-submit" type="button" data-open-submit>Mulai menulis <span aria-hidden="true">↗</span></button>
+      </section>
+
+      <section class="content-area" id="karya">
+        <div class="content-main" id="content-main">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow eyebrow-dark">DARI MEJA BACA</p>
+              <h2>Karya terbaru<span class="heading-period">.</span></h2>
+            </div>
+            <label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Cari judul atau penulis" aria-label="Cari judul atau penulis" /></label>
+          </div>
+          <div class="filter-row" id="category-filters" aria-label="Filter jenis karya"></div>
+          <div class="work-list" id="work-list" aria-live="polite"></div>
+        </div>
+
+        <aside class="reading-aside" id="tentang">
+          <div class="aside-heading"><span class="aside-mark" aria-hidden="true">✳</span><span>JENAKA ITU...</span></div>
+          <p class="aside-statement">Jendela kecil untuk melihat dunia dari sudut pandang yang berbeda.</p>
+          <p class="aside-copy">Puisi, cerita, ulasan, dan gagasan dari teman-teman kita. Ditulis dengan berani, dibaca dengan hati.</p>
+          <div class="aside-rule"></div>
+          <div class="aside-bottom"><span>TERBUKA UNTUK SEMUA KELAS</span><span class="aside-arrow" aria-hidden="true">↘</span></div>
+        </aside>
+      </section>
+
+      <footer class="site-footer"><a class="footer-brand" href="#beranda">JENAKA<span>®</span></a><span>Jendela Aksara · Ruang literasi sekolah</span><a href="#beranda">Kembali ke atas ↑</a></footer>
+    </main>
+
+    <dialog class="modal" id="submit-modal" aria-labelledby="submit-title">
+      <form class="modal-panel" id="submission-form">
+        <div class="modal-topline"><p class="eyebrow eyebrow-dark">GILIRANMU BERCERITA</p><button class="close-button" type="button" data-close-modal aria-label="Tutup">×</button></div>
+        <h2 id="submit-title">Kirim sebuah karya<span class="heading-period">.</span></h2>
+        <p class="modal-intro">Karyamu akan ditinjau guru sebelum tampil di ruang baca.</p>
+        <div class="form-grid">
+          <label class="field"><span>Nama penulis</span><input name="name" autocomplete="name" placeholder="Nama lengkap" required maxlength="60" /></label>
+          <label class="field"><span>Kelas</span><input name="className" placeholder="Contoh: 5A" required maxlength="12" /></label>
+          <label class="field field-wide"><span>Jenis karya</span><select name="type" required></select></label>
+          <label class="field field-wide"><span>Judul karya</span><input name="title" placeholder="Beri judul yang menarik" required maxlength="100" /></label>
+          <label class="field field-wide"><span>Isi karya</span><textarea name="body" placeholder="Tuliskan karyamu di sini..." rows="7" required maxlength="12000"></textarea><small class="field-hint">Maksimal 12.000 karakter</small></label>
+        </div>
+        <div class="form-footer"><span class="privacy-note">Dengan mengirim, karyamu masuk antrean tinjauan guru.</span><button class="button button-dark" type="submit">Kirim untuk ditinjau <span aria-hidden="true">→</span></button></div>
+      </form>
+    </dialog>
+
+    <dialog class="modal modal-narrow" id="teacher-modal" aria-labelledby="teacher-title">
+      <form class="modal-panel" id="teacher-login-form">
+        <div class="modal-topline"><p class="eyebrow eyebrow-dark">AREA KHUSUS PENDIDIK</p><button class="close-button" type="button" data-close-modal aria-label="Tutup">×</button></div>
+        <h2 id="teacher-title">Masuk ruang guru<span class="heading-period">.</span></h2>
+        <p class="modal-intro">Tinjau karya siswa sebelum diterbitkan.</p>
+        <label class="field"><span>Kode akses demo</span><input name="accessCode" autocomplete="off" placeholder="Masukkan kode" required /></label>
+        <p class="demo-note">Prototipe lokal: gunakan kode <strong>GURU-JENAKA</strong>. Data tersimpan di browser ini; autentikasi ini belum melindungi situs untuk penggunaan publik.</p>
+        <div class="form-footer"><span></span><button class="button button-dark" type="submit">Masuk <span aria-hidden="true">→</span></button></div>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="detail-modal" aria-labelledby="detail-title">
+      <article class="modal-panel detail-panel">
+        <div class="modal-topline"><p class="eyebrow eyebrow-dark" id="detail-meta"></p><button class="close-button" type="button" data-close-modal aria-label="Tutup">×</button></div>
+        <h2 id="detail-title"></h2>
+        <p class="detail-byline" id="detail-byline"></p>
+        <div class="detail-body" id="detail-body"></div>
+      </article>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
